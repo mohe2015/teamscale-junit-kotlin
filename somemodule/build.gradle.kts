@@ -50,6 +50,11 @@ teamscale {
     }
 }
 
+tasks.register<TeamscaleUpload>("teamscaleTestUpload") {
+    partition = "Unit Tests"
+    from(tasks.named("testwiseCoverageReport"))
+}
+
 kotlin {
     jvmToolchain(21)
 }
