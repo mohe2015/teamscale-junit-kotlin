@@ -31,6 +31,7 @@ val testwiseCoverageReport by tasks.registering(TestwiseCoverageReport::class) {
 }
 
 tasks.test {
+    forkEvery = 1
     useJUnitPlatform()
     finalizedBy(testwiseCoverageReport)
     configure<JacocoTaskExtension> {
